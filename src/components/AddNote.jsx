@@ -16,7 +16,7 @@ function AddNote(props) {
   function handleClick(event) {
     event.preventDefault();
     props.onAdd(note);
-    return;
+    setNote({ title: "", content: "" });
   }
   return (
     <div>

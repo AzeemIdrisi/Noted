@@ -11,16 +11,28 @@ function App() {
     updateNotes((prevValue) => [...prevValue, note]);
   }
 
-  function deleteNote(param) {
-    // TO BE DONE
+  function deleteNote(noteID) {
+    updateNotes((prevValue) => {
+      return prevValue.filter((noteItem, index) => {
+        return noteID !== index;
+      });
+    });
   }
   return (
     <div>
       <Header />
       <AddNote onAdd={addNote} />
-      {notes.map((note) => (
-        <Note key={note.title} title={note.title} content={note.content} />
-      ))}
+      {notes.map((note, index) => {
+        return (
+          <Note
+            onDelete={deleteNote}
+            key={index}
+            id={index}
+            title={note.title}
+            content={note.content}
+          />
+        );
+      })}
 
       <Footer />
     </div>

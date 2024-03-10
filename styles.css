@@ -32,8 +32,9 @@ footer {
   height: 2.5rem;
 }
 
-footer p {
-  color: #ccc;
+footer a {
+  color: #b3b3b3;
+  text-decoration: none;
 }
 .note {
   background: #fff;
